@@ -31,17 +31,32 @@ numbers = {
     1000: 'thousand',
 }
 
-if __name__ == '__main__':
-    x = '1120'
+
+def split_number(x):
     zero = ''.join(['0' for _ in range(len(x) - 1)])
     number = []
+    print(x)
     for i in x:
-        number.append(i + zero)
+        if i != '0':
+            number.append(i)
+            if len(zero) >= 2:
+                number.append('1' + zero)
+            if len(zero) == 1:
+                number.pop()
+                number.append(i+zero)
+        else:
+            number.append('0')
         zero = zero[:-1]
-    print(number, '-->', x)
+        print(number)
+    return number
+
+
+if __name__ == '__main__':
+    x = '142'
+    number = split_number(x)
+    print(number)
     fin = []
     for i in number:
-        print(i)
-        print(numbers.get(int(i)))
-        fin.append(numbers.get(int(i)))
+        if i != '0':
+            fin.append(numbers.get(int(i)))
     print(" ".join(fin))
