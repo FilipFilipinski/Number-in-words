@@ -42,19 +42,25 @@ def split_number(x):
                 number.append('1' + zero)
             if len(zero) == 1:
                 number.pop()
-                number.append(i+zero)
+                number.append(i + zero)
         else:
             number.append('0')
         zero = zero[:-1]
     return number
 
 
-if __name__ == '__main__':
-    x = '9999'
+def num(x):
     number = split_number(x)
     print(number)
     fin = []
     for i in number:
         if i != '0':
-            fin.append(numbers.get(int(i)))
+            a = numbers.get(int(i))
+            fin.append(a)
+            if a == 'hundred':
+                fin.append('and')
     print(" ".join(fin))
+
+
+for i in range(10000):
+    num(str(i))
