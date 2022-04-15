@@ -1,4 +1,5 @@
 numbers = {
+    0: 'zero',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -38,6 +39,9 @@ if __name__ == '__main__':
         number.append(i + zero)
         zero = zero[:-1]
     print(number, '-->', x)
+    fin = []
     for i in number:
         print(i)
-        print(numbers.get(i))
+        print(numbers.get(int(i)))
+        fin.append(numbers.get(int(i)))
+    print(" ".join(fin))
