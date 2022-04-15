@@ -35,7 +35,6 @@ numbers = {
 def split_number(x):
     zero = ''.join(['0' for _ in range(len(x) - 1)])
     number = []
-    print(x)
     for i in x:
         if i != '0':
             number.append(i)
@@ -47,12 +46,11 @@ def split_number(x):
         else:
             number.append('0')
         zero = zero[:-1]
-        print(number)
     return number
 
 
 if __name__ == '__main__':
-    x = '142'
+    x = '9999'
     number = split_number(x)
     print(number)
     fin = []
