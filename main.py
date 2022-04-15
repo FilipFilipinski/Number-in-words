@@ -31,4 +31,10 @@ numbers = {
 }
 
 if __name__ == '__main__':
-    pass
+    x = '1120'
+    zero = ''.join(['0' for _ in range(len(x) - 1)])
+    number = []
+    for i in x:
+        number.append(i + zero)
+        zero = zero[:-1]
+    print(number)
