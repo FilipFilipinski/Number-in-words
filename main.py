@@ -39,7 +39,6 @@ numbers = {
 
 1231 ->1321 -> 123 1 ->1 
 '''
-x = '20111'
 
 
 def number_to_3_element_boards(x: str) -> list:
@@ -56,9 +55,6 @@ def number_to_3_element_boards(x: str) -> list:
     number.reverse()
     return number
 
-
-arr = number_to_3_element_boards(x)
-print(arr)
 
 def transform_the_array_into_a_readable_version(array: list) -> list:
     for i in array:
@@ -79,3 +75,9 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
             else:
                 fial.append(i[0] + i[1])
             print(fial)
+
+
+x = '20111'
+arr = number_to_3_element_boards(x)
+print(arr)
+transform_the_array_into_a_readable_version(arr)
