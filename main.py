@@ -1,5 +1,5 @@
 numbers = {
-    0: 'zero',
+    0: '',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -83,7 +83,7 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
     return result
 
 
-x = '12'
+x = '100'
 print(x)
 arr = number_to_3_element_boards(x)
 print(arr)
@@ -97,6 +97,3 @@ for i in result:
     number.append(number_notation.get(lenght))
     lenght += -1
 print(" ".join(number))
-'''
-
-'''
