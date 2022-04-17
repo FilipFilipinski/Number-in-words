@@ -31,15 +31,6 @@ numbers = {
     1000: 'thousand',
 }
 
-'''
-1231 -> 1 1000 2 100 30 1
-6578 -> 6 1000 5 100 70 8
-1012 -> 1 1000 12
-9313 -> 9 1000 3 100 13
-
-1231 ->1321 -> 123 1 ->1 
-'''
-
 
 def number_to_3_element_boards(x: str) -> list:
     length, number, fr = len(x) - 1, [], []
@@ -69,16 +60,18 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
                 i_segment.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
             else:
                 i_segment.append(f'{i[1] + i[2]}')
-            print(i_segment)
+            result.append(i_segment)
         elif len(i) == 2:
             if i[0] != '1' and i[0] != '0':
                 i_segment.extend((f'{"" if i[0] == "0" else i[0] + "0"}', f'{i[1]}'))
             else:
                 i_segment.append(i[0] + i[1])
             result.append(i_segment)
+    print(result)
 
 
 x = '20111'
+print(x)
 arr = number_to_3_element_boards(x)
 print(arr)
 transform_the_array_into_a_readable_version(arr)
