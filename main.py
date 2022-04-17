@@ -30,8 +30,9 @@ numbers = {
     100: 'hundred',
 }
 number_notation = {
+    0: '',
     1: 'thousand',
-    2: 'thousand',
+    2: 'million',
     3: 'billion',
     4: 'trillion',
     5: 'quadrillion',
@@ -79,14 +80,23 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
             result.append(i_segment)
         else:
             result.append([i[0]])
-    print(result)
+    return result
 
 
-x = '1234'
+x = '12'
 print(x)
 arr = number_to_3_element_boards(x)
 print(arr)
-transform_the_array_into_a_readable_version(arr)
+result = transform_the_array_into_a_readable_version(arr)
+lenght = len(result) - 1
+
+number = []
+for i in result:
+    for g in i:
+        number.append(numbers.get(int(g)))
+    number.append(number_notation.get(lenght))
+    lenght += -1
+print(" ".join(number))
 '''
 
 '''
