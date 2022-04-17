@@ -39,7 +39,7 @@ numbers = {
 
 1231 ->1321 -> 123 1 ->1 
 '''
-x = '242'
+x = '20111'
 
 
 def number_to_3_element_boards(x: str) -> list:
@@ -59,16 +59,23 @@ def number_to_3_element_boards(x: str) -> list:
 
 arr = number_to_3_element_boards(x)
 print(arr)
-for i in arr:
-    fial = []
-    if i[0] != '0':
-        fial.extend((f'{i[0]}', '100'))
-    else:
-        fial.append('0')
-    if len(i) == 3:
 
-        if i[1] != '1' and i[1] != '0':
-            fial.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
-        else:
-            fial.append(f'{i[1] + i[2]}')
-        print(fial)
+def transform_the_array_into_a_readable_version(array: list) -> list:
+    for i in array:
+        fial = []
+        if len(i) == 3:
+            if i[0] != '0':
+                fial.extend((f'{i[0]}', '100'))
+            else:
+                fial.append('0')
+            if i[1] != '1' and i[1] != '0':
+                fial.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
+            else:
+                fial.append(f'{i[1] + i[2]}')
+            print(fial)
+        elif len(i) == 2:
+            if i[0] != '1' and i[0] != '0':
+                fial.extend((f'{"" if i[0] == "0" else i[0] + "0"}', f'{i[1]}'))
+            else:
+                fial.append(i[0] + i[1])
+            print(fial)
