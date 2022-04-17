@@ -31,36 +31,30 @@ numbers = {
     1000: 'thousand',
 }
 
+'''
+1231 -> 1 1000 2 100 30 1
+6578 -> 6 1000 5 100 70 8
+1012 -> 1 1000 12
+9313 -> 9 1000 3 100 13
 
-def split_number(x):
-    zero = ''.join(['0' for _ in range(len(x) - 1)])
-    number = []
-    for i in x:
-        if i != '0':
-            number.append(i)
-            if len(zero) >= 2:
-                number.append('1' + zero)
-            if len(zero) == 1:
-                number.pop()
-                number.append(i + zero)
-        else:
-            number.append('0')
-        zero = zero[:-1]
+1231 ->1321 -> 123 1 ->1 
+'''
+x = '3212'
+
+
+def number_to_3_element_boards(x: str) -> list:
+    length, number, fr = len(x) - 1, [], []
+    for _ in x:
+        if len(fr) == 3:
+            fr.reverse()
+            number.append(fr)
+            fr = []
+        fr.append(x[length])
+        length += -1
+    fr.reverse()
+    number.append(fr)
+    number.reverse()
     return number
 
 
-def num(x):
-    number = split_number(x)
-    print(number)
-    fin = []
-    for i in number:
-        if i != '0':
-            a = numbers.get(int(i))
-            fin.append(a)
-            if a == 'hundred':
-                fin.append('and')
-    print(" ".join(fin))
-
-
-for i in range(10000):
-    num(str(i))
+print(number_to_3_element_boards(x))
