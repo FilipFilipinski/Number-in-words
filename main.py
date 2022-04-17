@@ -29,6 +29,17 @@ numbers = {
     90: 'ninety',
     100: 'hundred',
 }
+number_notation = {
+    1: 'thousand',
+    2: 'thousand',
+    3: 'billion',
+    4: 'trillion',
+    5: 'quadrillion',
+    6: 'quintillion',
+    7: 'sextillion',
+    8: 'septillion',
+    9: 'octillion'
+}
 
 
 def number_to_3_element_boards(x: str) -> list:
