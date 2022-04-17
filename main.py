@@ -1,17 +1,17 @@
 from haha import *
 
 
-def number_to_3_element_boards(x: str) -> list:
-    length, number, fr = len(x) - 1, [], []
-    for _ in x:
-        if len(fr) == 3:
-            fr.reverse()
-            number.append(fr)
-            fr = []
-        fr.append(x[length])
+def number_to_3_element_boards(array: str) -> list:
+    length, number, three_element_array = len(array) - 1, [], []
+    for _ in array:
+        if len(three_element_array) == 3:
+            three_element_array.reverse()
+            number.append(three_element_array)
+            three_element_array = []
+        three_element_array.append(array[length])
         length += -1
-    fr.reverse()
-    number.append(fr)
+    three_element_array.reverse()
+    number.append(three_element_array)
     number.reverse()
     return number
 
@@ -42,19 +42,18 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
 
 
 def numbers_to_word(num: list) -> str:
-    lenght = len(x) - 1
-    number = []
+    length, number = len(x) - 1, []
     for i in num:
         for g in i:
             try:
                 if i[0] != '0' and i[1] != '00':
                     number.append(numbers.get(int(g)))
-                    number.append(number_notation.get(lenght))
+                    number.append(number_notation.get(length))
             except IndexError:
                 number.append(numbers.get(int(g)))
-                number.append(number_notation.get(lenght))
+                number.append(number_notation.get(length))
 
-        lenght -= 1
+        length -= 1
     return " ".join(" ".join(number).split())
 
 
