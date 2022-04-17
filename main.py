@@ -1,4 +1,4 @@
-from haha import *
+from data import *
 
 
 def number_to_3_element_boards(array: str) -> list:
@@ -42,7 +42,7 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
 
 
 def numbers_to_word(num: list) -> str:
-    length, number = len(x) - 1, []
+    length, number = len(num) - 1, []
     for i in num:
         for g in i:
             try:
@@ -57,6 +57,11 @@ def numbers_to_word(num: list) -> str:
     return " ".join(" ".join(number).split())
 
 
-x = '10000'
+x = '1123'
 print(x)
-print(numbers_to_word(transform_the_array_into_a_readable_version(number_to_3_element_boards(x))))
+z = number_to_3_element_boards(x)
+d = transform_the_array_into_a_readable_version(z)
+h = numbers_to_word(d)
+print(z)
+print(d)
+print(h)
