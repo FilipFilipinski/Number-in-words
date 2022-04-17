@@ -83,17 +83,23 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
     return result
 
 
-x = '100'
-print(x)
-arr = number_to_3_element_boards(x)
-print(arr)
-result = transform_the_array_into_a_readable_version(arr)
-lenght = len(result) - 1
+def numbers_to_word(num: list) -> str:
+    lenght = len(x) - 1
+    number = []
+    for i in num:
+        for g in i:
+            try:
+                if i[0] != '0' and i[1] != '00':
+                    number.append(numbers.get(int(g)))
+                    number.append(number_notation.get(lenght))
+            except IndexError:
+                number.append(numbers.get(int(g)))
+                number.append(number_notation.get(lenght))
 
-number = []
-for i in result:
-    for g in i:
-        number.append(numbers.get(int(g)))
-    number.append(number_notation.get(lenght))
-    lenght += -1
-print(" ".join(number))
+        lenght -= 1
+    return " ".join(" ".join(number).split())
+
+
+x = '10000'
+print(x)
+print(numbers_to_word(transform_the_array_into_a_readable_version(number_to_3_element_boards(x))))
