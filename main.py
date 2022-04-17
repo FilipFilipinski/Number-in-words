@@ -57,24 +57,25 @@ def number_to_3_element_boards(x: str) -> list:
 
 
 def transform_the_array_into_a_readable_version(array: list) -> list:
+    result = []
     for i in array:
-        fial = []
+        i_segment = []
         if len(i) == 3:
             if i[0] != '0':
-                fial.extend((f'{i[0]}', '100'))
+                i_segment.extend((f'{i[0]}', '100'))
             else:
-                fial.append('0')
+                i_segment.append('0')
             if i[1] != '1' and i[1] != '0':
-                fial.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
+                i_segment.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
             else:
-                fial.append(f'{i[1] + i[2]}')
-            print(fial)
+                i_segment.append(f'{i[1] + i[2]}')
+            print(i_segment)
         elif len(i) == 2:
             if i[0] != '1' and i[0] != '0':
-                fial.extend((f'{"" if i[0] == "0" else i[0] + "0"}', f'{i[1]}'))
+                i_segment.extend((f'{"" if i[0] == "0" else i[0] + "0"}', f'{i[1]}'))
             else:
-                fial.append(i[0] + i[1])
-            print(fial)
+                i_segment.append(i[0] + i[1])
+            result.append(i_segment)
 
 
 x = '20111'
