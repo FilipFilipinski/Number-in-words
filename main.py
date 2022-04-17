@@ -28,7 +28,6 @@ numbers = {
     80: 'eighty',
     90: 'ninety',
     100: 'hundred',
-    1000: 'thousand',
 }
 
 
@@ -67,11 +66,16 @@ def transform_the_array_into_a_readable_version(array: list) -> list:
             else:
                 i_segment.append(i[0] + i[1])
             result.append(i_segment)
+        else:
+            result.append([i[0]])
     print(result)
 
 
-x = '20111'
+x = '1234'
 print(x)
 arr = number_to_3_element_boards(x)
 print(arr)
 transform_the_array_into_a_readable_version(arr)
+'''
+
+'''
