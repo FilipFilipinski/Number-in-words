@@ -39,7 +39,7 @@ numbers = {
 
 1231 ->1321 -> 123 1 ->1 
 '''
-x = '3212'
+x = '242'
 
 
 def number_to_3_element_boards(x: str) -> list:
@@ -57,4 +57,18 @@ def number_to_3_element_boards(x: str) -> list:
     return number
 
 
-print(number_to_3_element_boards(x))
+arr = number_to_3_element_boards(x)
+print(arr)
+for i in arr:
+    fial = []
+    if i[0] != '0':
+        fial.extend((f'{i[0]}', '100'))
+    else:
+        fial.append('0')
+    if len(i) == 3:
+
+        if i[1] != '1' and i[1] != '0':
+            fial.extend((f'{"" if i[1] == "0" else i[1] + "0"}', f'{i[2]}'))
+        else:
+            fial.append(f'{i[1] + i[2]}')
+        print(fial)
