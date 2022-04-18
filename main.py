@@ -5,12 +5,15 @@ def number_to_3_element_boards(array: str) -> list:
     length, number, three_element_array = len(array) - 1, [], []
     for _ in array:
         if len(three_element_array) == 3:
-            number.append(list(reversed(three_element_array)))
+            three_element_array.reverse()
+            number.append(three_element_array)
             three_element_array = []
         three_element_array.append(array[length])
         length += -1
-    number.append(list(reversed(three_element_array)))
-    return list(reversed(number))
+    three_element_array.reverse()
+    number.append(three_element_array)
+    number.reverse()
+    return number
 
 
 def transform_the_array_into_a_readable_version(array: list) -> list:
@@ -45,15 +48,18 @@ def numbers_to_word(num: list) -> str:
             try:
                 if i[0] != '0' and i[1] != '00':
                     number.append(numbers.get(int(g)))
-                    if i[3] == g:
+                    if i[2] == g:
                         number.append(number_notation.get(length))
                 elif i[0] == '0' and i[0] == g:
                     number.append(numbers.get(int(i[1])))
                     if i[1] != '00':
                         number.append(number_notation.get(length))
+                        try:
+                            number.append(numbers.get(int(i[2])))
+                        except IndexError:
+                            pass
             except IndexError:
-                number.append(numbers.get(int(g)))
-                number.append(number_notation.get(length))
+                pass
 
         length -= 1
     return " ".join(" ".join(number).split())
@@ -70,4 +76,4 @@ def main(x: str) -> str:
 
 
 if __name__ == '__main__':
-    print(main('1123213123123123123123'))
+    print(main('1120000022000000023'))
