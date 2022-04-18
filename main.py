@@ -60,3 +60,6 @@ def numbers_to_word(num: list) -> str:
 def main(x: str) -> str:
     result = numbers_to_word(transform_the_array_into_a_readable_version(number_to_3_element_boards(x)))
     return result
+
+
+print(main('12343'))
