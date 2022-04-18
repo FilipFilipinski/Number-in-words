@@ -53,11 +53,11 @@ def numbers_to_word(num: list) -> str:
                 elif i[0] == '0' and i[0] == g:
                     number.append(numbers.get(int(i[1])))
                     if i[1] != '00':
-                        number.append(number_notation.get(length))
                         try:
                             number.append(numbers.get(int(i[2])))
                         except IndexError:
                             pass
+                        number.append(number_notation.get(length))
             except IndexError:
                 pass
 
