@@ -57,11 +57,6 @@ def numbers_to_word(num: list) -> str:
     return " ".join(" ".join(number).split())
 
 
-x = '1123'
-print(x)
-z = number_to_3_element_boards(x)
-d = transform_the_array_into_a_readable_version(z)
-h = numbers_to_word(d)
-print(z)
-print(d)
-print(h)
+def main(x: str) -> str:
+    result = numbers_to_word(transform_the_array_into_a_readable_version(number_to_3_element_boards(x)))
+    return result
