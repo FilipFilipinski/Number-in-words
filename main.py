@@ -48,7 +48,12 @@ def numbers_to_word(num: list) -> str:
             try:
                 if i[0] != '0' and i[1] != '00':
                     number.append(numbers.get(int(g)))
-                    number.append(number_notation.get(length))
+                    if i[3] == g:
+                        number.append(number_notation.get(length))
+                elif i[0] == '0' and i[0] == g:
+                    number.append(numbers.get(int(i[1])))
+                    if i[1] != '00':
+                        number.append(number_notation.get(length))
             except IndexError:
                 number.append(numbers.get(int(g)))
                 number.append(number_notation.get(length))
@@ -58,8 +63,14 @@ def numbers_to_word(num: list) -> str:
 
 
 def main(x: str) -> str:
-    result = numbers_to_word(transform_the_array_into_a_readable_version(number_to_3_element_boards(x)))
+    b = number_to_3_element_boards(x)
+    print(b)
+    a = transform_the_array_into_a_readable_version(b)
+    print(a)
+    result = numbers_to_word(a)
+    print(result)
     return result
 
 
-print(main('12343'))
+if __name__ == '__main__':
+    print(main('1123213123123123123123'))
