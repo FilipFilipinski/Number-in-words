@@ -5,15 +5,12 @@ def number_to_3_element_boards(array: str) -> list:
     length, number, three_element_array = len(array) - 1, [], []
     for _ in array:
         if len(three_element_array) == 3:
-            three_element_array.reverse()
-            number.append(three_element_array)
+            number.append(list(reversed(three_element_array)))
             three_element_array = []
         three_element_array.append(array[length])
         length += -1
-    three_element_array.reverse()
-    number.append(three_element_array)
-    number.reverse()
-    return number
+    number.append(list(reversed(three_element_array)))
+    return list(reversed(number))
 
 
 def transform_the_array_into_a_readable_version(array: list) -> list:
