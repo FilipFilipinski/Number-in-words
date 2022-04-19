@@ -48,11 +48,11 @@ def numbers_to_word(num: list) -> str:
             try:
                 if i[0] != '0' and i[1] != '00':
                     number.append(numbers.get(int(g)))
-                    if i[2] == g:
+                    if i[-1] == g:
                         number.append(number_notation.get(length))
                 elif i[0] == '0' and i[0] == g:
                     number.append(numbers.get(int(i[1])))
-                    if i[1] != '00':
+                    if i[-1] != '00':
                         try:
                             number.append(numbers.get(int(i[2])))
                         except IndexError:
@@ -76,4 +76,4 @@ def main(x: str) -> str:
 
 
 if __name__ == '__main__':
-    print(main('1120000022000000023'))
+    print(main('1121000022000000023'))
