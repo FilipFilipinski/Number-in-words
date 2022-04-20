@@ -59,7 +59,8 @@ def numbers_to_word(num: list) -> str:
                             pass
                         number.append(number_notation.get(length))
             except IndexError:
-                pass
+                number.append(numbers.get(int(g)))
+                number.append(number_notation.get(length))
 
         length -= 1
     return " ".join(" ".join(number).split())
@@ -67,13 +68,18 @@ def numbers_to_word(num: list) -> str:
 
 def main(x: str) -> str:
     b = number_to_3_element_boards(x)
-    print(b)
     a = transform_the_array_into_a_readable_version(b)
-    print(a)
     result = numbers_to_word(a)
-    print(result)
     return result
 
 
+def test():
+    assert main('1') == 'one', "Should be one"
+    assert main('11') == 'eleven', "Should be eleven"
+    assert main('110101') == 'one hundred ten thousand one hundred one'
+    assert main('1101') == 'one thousand one hundred one', "Should be one thousand one hundred one"
+    print("Everything passed")
+
+
 if __name__ == '__main__':
-    print(main('1121000022000000023'))
+    test()
