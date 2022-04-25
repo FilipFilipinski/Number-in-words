@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+from script.main import main_script
 
 app = Flask(__name__)
 
@@ -10,7 +11,10 @@ def home():
 
 @app.route('/<name>/')
 def user_view(name):
-    return name
+    if name.isdigit():
+        return main_script(name)
+    else:
+        return redirect('/')
 
 
 if __name__ == '__main__':
