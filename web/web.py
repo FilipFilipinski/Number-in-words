@@ -9,10 +9,10 @@ def home():
     return render_template('form.html')
 
 
-@app.route('/<name>/')
-def user_view(name):
-    if name.isdigit():
-        return render_template('number.html')
+@app.route('/<number>/')
+def user_view(number):
+    if number.isdigit():
+        return render_template('number.html', number=number, number_w=main_script(number))
     else:
         return redirect('/')
 
