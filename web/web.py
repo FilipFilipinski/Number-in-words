@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('number.html')
+    return render_template('form.html')
 
 
 @app.route('/<name>/')
 def user_view(name):
     if name.isdigit():
-        return main_script(name)
+        return render_template('number.html')
     else:
         return redirect('/')
 
