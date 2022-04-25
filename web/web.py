@@ -17,8 +17,8 @@ def user_view(name):
         return redirect('/')
 
 
-@app.route('api/<name>/')
-def user_view(name):
+@app.route('/api/<name>/')
+def api(name):
     if name.isdigit():
         return main_script(name)
     else:
