@@ -17,5 +17,13 @@ def user_view(name):
         return redirect('/')
 
 
+@app.route('api/<name>/')
+def user_view(name):
+    if name.isdigit():
+        return main_script(name)
+    else:
+        return "Bad Request", 400
+
+
 if __name__ == '__main__':
     app.run(debug=True)

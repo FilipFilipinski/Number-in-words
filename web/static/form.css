@@ -4,7 +4,7 @@ body {
     font-size: 22px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #7049E8;
 }
@@ -22,6 +22,18 @@ a{
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+.box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    background: #7049E8;
+}
+
+.border {
+    margin: 40px;
 }
 
 h1 {
