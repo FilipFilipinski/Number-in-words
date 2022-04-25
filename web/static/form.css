@@ -4,6 +4,11 @@ body {
     font-size: 22px;
 }
 
+a{
+    text-decoration: none;
+    color: #7049E8;
+}
+
 
 .img {
     display: block;
