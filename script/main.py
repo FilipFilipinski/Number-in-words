@@ -1,4 +1,4 @@
-from data import *
+from script.data.data import *
 
 
 def number_to_3_element_boards(array: str) -> list:
@@ -74,28 +74,8 @@ def numbers_to_word(num: list) -> str:
     return " ".join(" ".join(number).split())
 
 
-def main(x: str) -> str:
+def main_script(x: str) -> str:
     b = number_to_3_element_boards(x)
     a = transform_the_array_into_a_readable_version(b)
     result = numbers_to_word(a)
-    #print(a)
     return result
-
-
-def test():
-    assert main('1') == 'one', "Should be one"
-    assert main('11') == 'eleven', "Should be eleven"
-    assert main('21') == 'twenty one', "Should be eleven"
-    assert main('1101') == 'one thousand one hundred one', "Should be one thousand one hundred one"
-    assert main('110101') == 'one hundred ten thousand one hundred one'
-    assert main('100002') == 'one hundred thousand two'
-    assert main('1002001') == 'one million two thousand one'
-    assert main('12123123') == 'twelve million one hundred twenty three thousand one hundred twenty three'
-    assert main('100120003') == 'one hundred million one hundred twenty thousand three'
-    assert main('121212122') == 'one hundred twenty one million two hundred twelve thousand one hundred twenty two'
-
-    print("Everything passed")
-
-
-if __name__ == '__main__':
-    test()
