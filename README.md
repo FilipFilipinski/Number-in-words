@@ -17,7 +17,7 @@ This site was created to convert numbers from numeric form to written numbers. I
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Input can only contain digits|
+| `value`      | `string` | **Required**. Input can only contain digits|
 
 #### Example
 ```http
