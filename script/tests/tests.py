@@ -12,7 +12,7 @@ def test():
     assert main_script('12123123') == 'twelve million one hundred twenty three thousand one hundred twenty three'
     assert main_script('100120003') == 'one hundred million one hundred twenty thousand three'
     assert main_script('121212122') == 'one hundred twenty one million two hundred twelve thousand one hundred twenty two'
-    print('APPA HOP HOP, tests passed')
+    print('APPA HOP HOP, tests passed ❤️❤️')
 
 
 if __name__ == '__main__':

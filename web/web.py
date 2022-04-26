@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from script.main import main_script
 
 app = Flask(__name__)
@@ -20,9 +20,9 @@ def user_view(number):
 @app.route('/api/<value>/')
 def api(value):
     if value.isdigit():
-        return {value: main_script(value)}
+        return jsonify({value: main_script(value)})
     else:
-        return "Bad Request", 400
+        return jsonify({'message': "Bad Request", 'status': 400})
 
 
 if __name__ == '__main__':
