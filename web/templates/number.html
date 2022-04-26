@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='number.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-    <div class="mainNumber">
+<div class="mainNumber">
+    <h1>
         {{number}}
-    </div>
-    <div class="subnumber">
+    </h1>
+</div>
+<div class="subnumber">
+    <h2>
         {{number_w}}
-    </div>
+    </h2>
+</div>
 </body>
 </html>
