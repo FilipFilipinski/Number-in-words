@@ -22,7 +22,7 @@ def api(value):
     if value.isdigit():
         return jsonify({value: main_script(value)})
     else:
-        return jsonify({'message': "Bad Request", 'status': 400})
+        return jsonify({'message': "Bad Request", 'status': 400}), 400
 
 
 if __name__ == '__main__':
