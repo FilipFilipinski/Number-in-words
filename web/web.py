@@ -20,7 +20,7 @@ def user_view(number):
 @app.route('/api/<value>/')
 def api(value):
     if value.isdigit():
-        return main_script(value)
+        return {value: main_script(value)}
     else:
         return "Bad Request", 400
 
