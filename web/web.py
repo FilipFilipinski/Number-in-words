@@ -13,7 +13,7 @@ def home():
         return render_template('formh.html')
 
 
-@app.route('/<number>/')
+@app.route('/<number>')
 def user_view(number):
     if number.isdigit():
         return render_template('number.html', number=number, number_w=main_script(number))
@@ -21,7 +21,7 @@ def user_view(number):
         return redirect('/')
 
 
-@app.route('/api/<value>/')
+@app.route('/api/<value>')
 def api(value):
     if value.isdigit():
         return jsonify({value: main_script(value)})
