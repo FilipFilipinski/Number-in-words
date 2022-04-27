@@ -33,3 +33,43 @@ h2 {
     text-align: center;
     font-weight: bold;
 }
+
+
+button {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: lighter;
+    line-height: normal;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 120px;
+    will-change: transform;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+button:disabled {
+    pointer-events: none;
+}
+
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
