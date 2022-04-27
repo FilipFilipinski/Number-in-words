@@ -76,7 +76,8 @@ def numbers_to_word(num: list) -> str:
 
 def main_script(x: str) -> str:
     # input: string which can only contain digits. Result is string (number in words).
-    b = number_to_3_element_boards(x.lstrip('0') or '0')[:30]
+    b = number_to_3_element_boards(x.lstrip('0')[:30] or '0')
+
     a = transform_the_array_into_a_readable_version(b)
     result = numbers_to_word(a)
     return result
