@@ -17,7 +17,15 @@
         <a href="https://github.com/FilipFilipinski">github.</a></h2>
 </div>
 <div class="block">
-    <a> hi </a>
+    <form action='{{ url_for("home") }}' method="post">
+        <label for="pkt">
+            <a>
+                hej
+            </a>
+        </label>
+        <input type="text" name="number" placeholder="1002">
+        <button type="submit" class="button1">Potwierdź</button>
+    </form>
 </div>
 </body>
 </html>

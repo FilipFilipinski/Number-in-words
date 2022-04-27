@@ -1,12 +1,16 @@
-from flask import Flask, render_template, redirect, jsonify
+import requests
+from flask import Flask, render_template, redirect, jsonify, request
 from script.main import main_script
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template('form.html')
+    if request.method == "POST":
+        return redirect('/' + request.form.get("number"))
+    else:
+        return render_template('formh.html')
 
 
 @app.route('/<number>/')

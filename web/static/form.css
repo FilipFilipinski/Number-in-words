@@ -6,7 +6,20 @@ body {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 150px;
+    width: 40%;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 50px;
 }
 
 
@@ -47,15 +60,3 @@ a {
 }
 
 
-h1 {
-    font-size: 150px;
-    width: 40%;
-}
-
-h2 {
-    font-size: 30px;
-}
-
-h3 {
-    font-size: 50px;
-}
