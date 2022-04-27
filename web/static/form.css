@@ -1,3 +1,10 @@
+:root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+}
+
 body {
     background-color: #FFFFFF;
     font-family: 'Inter';
@@ -55,8 +62,53 @@ h3 {
     width: 60%;
     height: 100px;
     background: #7049E8;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 10%;
 }
 
 
+button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 4px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+
+button:hover {
+    background-color: #f7fafa;
+}
+
+button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: Inter;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+}
+
+input:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+}
